@@ -1,6 +1,7 @@
 class Song
   attr_accessor :name, :artist_name
-  @@all = []
+  @@all = [song = Song.create
+  Song.all.include?(song)]
 
   def self.all
     @@all
@@ -17,8 +18,6 @@ s.name = "The Ship Song"
 s.artist_name = "Nick Cave"
 s.save
 
-song = Song.create
-Song.all.include?(song)
 
 song = Song.new_by_name("The Middle")
 song.name
